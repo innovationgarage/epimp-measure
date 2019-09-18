@@ -10,7 +10,7 @@ merge = deepmerge.Merger([(dict, ["merge"])], ["override"], ["override"]).merge
 default_config = {
     "accel": {"bus": 0, "address": 0x68},
     "compass": {"gauss": 4.7, "declination": (-2,5), "port": 0},
-    "freuency": 100
+    "frequency": 100
 }
 
 config = merge(default_config, json.loads(sys.argv[1]))
@@ -27,4 +27,4 @@ while True:
         "time": time.time()}, sys.stdout)
     sys.stdout.write("\n")
     sys.stdout.flush()
-    time.sleep(1./config["freuency"])
+    time.sleep(1./config["frequency"])
